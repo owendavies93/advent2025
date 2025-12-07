@@ -17,14 +17,6 @@ while (<$fh>) {
 
 @ranges = sort { $a->[0] <=> $b->[0] } @ranges;
 
-my @ings;
-while (<$fh>) {
-    chomp;
-    push @ings, $_;
-}
-
-my $i = 0;
-
 my @merged_ranges;
 for my $r (@ranges) {
     my ($ns, $ne) = @$r;
